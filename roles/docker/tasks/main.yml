@@ -1,0 +1,9 @@
+- name: Add key for Docker repository
+  apt_key: keyserver=keyserver.ubuntu.com id=36A1D7869245C8950F966E92D8576A8BA88D21E9 state=present
+- name: Add docker repository
+  apt_repository: repo='deb http://get.docker.io/ubuntu docker main' state=present
+- name: Install Docker
+  apt: name=lxc-docker update_cache=yes state=present
+- name: Install Docker python library
+  pip: name=docker-py
+

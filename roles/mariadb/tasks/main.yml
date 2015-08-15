@@ -1,0 +1,13 @@
+- name: create mariadb data directory
+  file: path="{{ mysql_data_dir }}" state=directory
+
+- name: Install MariaDB container
+  docker:
+    name: mariadb
+    docker_api_version: 1.18
+    image: mariadb:latest
+    state: started
+    env: 
+      MYSQL_ROOT_PASSWORD: "{{ mysql_root_password }}"
+    volumes:
+      - "{{ mysql_data_dir }}:/var/lib/mysql"

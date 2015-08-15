@@ -1,0 +1,10 @@
+- name: Install Piwik
+  docker:
+    name: piwik
+    docker_api_version: 1.18
+    image: cbeer/piwik
+    state: started
+    links:
+      - "mariadb:db"
+    ports:
+      - "{{ piwik_port }}:80"
