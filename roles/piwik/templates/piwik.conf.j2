@@ -4,10 +4,6 @@ server {
   server_tokens off;
 
   location / {
-    proxy_pass         http://127.0.0.1:50000/;
-  }
-
-  location ~ index\.php {
     return         301 https://$server_name$request_uri;
   }
   
@@ -35,6 +31,11 @@ server {
     proxy_pass         http://127.0.0.1:50000/;
     auth_basic "Restricted";
     auth_basic_user_file htpasswd;
+  }
+
+  location ~ piwik\.(php|js) {
+    proxy_pass http://127.0.0.1:50000;
+    auth_basic "off";
   }
 
   client_max_body_size 4M;
