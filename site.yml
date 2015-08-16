@@ -1,4 +1,4 @@
-- include: site.yml 
+- include: setup.yml 
 - include: piwik.yml
 
 

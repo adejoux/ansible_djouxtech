@@ -2,7 +2,7 @@
   docker:
     name: piwik
     docker_api_version: 1.18
-    image: cbeer/piwik
+    image: "{{piwik_image}}"
     state: started
     links:
       - "mariadb:db"

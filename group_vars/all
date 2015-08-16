@@ -1,2 +1,6 @@
-mysql_data_dir: /data/mariadb
+mysql_data_dir: "/data/mariadb"
+pg_data_dir: "/data/postgres"
 piwik_port: "127.0.0.1:50000"
+mariadb_image: "mariadb:latest"
+piwik_image: "cbeer/piwik"
+pg_image: "postgres:latest"

@@ -1,0 +1,8 @@
+- name: Add key for NGINX repository
+  apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
+
+- name: Add NGINX repository
+  apt_repository: repo='deb http://nginx.org/packages/ubuntu/ {{ ansible_distribution_release }} nginx' state=present
+
+- name: Install NGINX
+  apt: name=nginx update_cache=yes state=present

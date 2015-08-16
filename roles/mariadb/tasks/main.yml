@@ -5,7 +5,7 @@
   docker:
     name: mariadb
     docker_api_version: 1.18
-    image: mariadb:latest
+    image: "{{mariadb_image}}"
     state: started
     env: 
       MYSQL_ROOT_PASSWORD: "{{ mysql_root_password }}"
