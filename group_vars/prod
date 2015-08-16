@@ -1,0 +1,3 @@
+piwik_url: "stats.djouxtech.net"
+piwik_cert: "/etc/nginx/ssl/djouxtech.cer"
+piwik_key:  "/etc/nginx/ssl/djouxtech_u.key"

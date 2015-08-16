@@ -5,4 +5,13 @@
   apt_repository: repo='deb http://nginx.org/packages/ubuntu/ {{ ansible_distribution_release }} nginx' state=present
 
 - name: Install NGINX
-  apt: name=nginx update_cache=yes state=present
+  apt: name=nginx update_cache=yes state=present cache_valid_time=21600
+
+- name: deploy proxy configuration
+  copy: src=proxy.conf dest=/etc/nginx/conf.d owner=root group=root mode=0644
+
+- name: create NGINX ssl directory
+  file: path=/etc/nginx/ssl state=directory owner=nginx group=nginx mode=0700
+
+- name: deploy ssl keys
+  copy: src="{{nginx_ssl_dir}}/" dest=/etc/nginx/ssl owner=nginx group=nginx mode=0400

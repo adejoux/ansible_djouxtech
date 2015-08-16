@@ -5,6 +5,11 @@
     image: "{{piwik_image}}"
     state: started
     links:
-      - "mariadb:db"
+      - "piwikdb:db"
     ports:
       - "{{ piwik_port }}:80"
+
+- name: deploy PIWIK configuration
+  template: src=piwik.conf.j2 dest=/etc/nginx/conf.d/piwik.conf owner=root group=root mode=0644
+  notify:
+    - restart nginx

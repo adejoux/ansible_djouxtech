@@ -1,0 +1,6 @@
+- hosts: all
+  vars_files:
+    - secret
+  sudo: yes
+  roles:
+    - blog

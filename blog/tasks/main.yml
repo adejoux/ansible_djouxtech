@@ -1,0 +1,2 @@
+- name: copy blog
+  copy: src=/home/adejoux/djouxtech-blog/public/ dest=/www/djouxtech/ owner=hugo group=hugo mode=444
