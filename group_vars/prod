@@ -1,3 +1,3 @@
-piwik_url: "stats.krystalia.net"
+piwik_nginx_server_name: "stats.krystalia.net"
 piwik_cert: "/etc/nginx/ssl/krystalia.cer"
 piwik_key:  "/etc/nginx/ssl/krystalia.key"
