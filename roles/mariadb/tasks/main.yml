@@ -4,7 +4,7 @@
 - name: Install MariaDB container
   docker:
     name: piwikdb
-    docker_api_version: 1.18
+    docker_api_version: "1.18"
     image: "{{mariadb_image}}"
     state: started
     env: 

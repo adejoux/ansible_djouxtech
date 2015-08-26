@@ -1,2 +1,2 @@
 - name: Install Python Package Manager
-  apt: name=python-pip update_cache=no state=present
+  apt: name=python-pip update_cache=yes state=present

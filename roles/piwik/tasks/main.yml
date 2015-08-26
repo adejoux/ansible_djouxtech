@@ -1,7 +1,7 @@
 - name: Install Piwik
   docker:
     name: piwik
-    docker_api_version: 1.18
+    docker_api_version: "1.18"
     image: "{{piwik_image}}"
     state: started
     links:
