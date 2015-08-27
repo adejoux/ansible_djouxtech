@@ -1,3 +1,3 @@
-piwik_url: "stats.vm1.com"
+piwik_nginx_server_name: "stats.vm1.com"
 piwik_cert: "/etc/nginx/ssl/nginx.crt"
 piwik_key:  "/etc/nginx/ssl/nginx.key"
